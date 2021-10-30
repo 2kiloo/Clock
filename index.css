@@ -1,0 +1,126 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper {
+    height: 300px;
+    width: 300px;
+    background-color: burlywood;
+    border-radius: 500px;
+    position: relative;
+}
+
+.wrapper .numbers {
+    --rotate: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    transform: rotate(var(--rotate));
+    font-size: 30px;
+}
+
+
+
+#one {
+    --rotate: 30deg;
+}
+
+#two {
+    --rotate: 60deg;
+}
+
+#three {
+    --rotate: 90deg;
+}
+
+#four {
+    --rotate: 120deg;
+}
+
+#five {
+    --rotate: 150deg;
+}
+
+#six {
+    --rotate: 180deg;
+}
+
+
+#seven {
+    --rotate: 210deg;
+}
+
+#eight {
+    --rotate: 240deg;
+}
+
+#nine {
+    --rotate: 270deg;
+}
+
+#ten {
+    --rotate: 300deg;
+}
+
+#twelve {
+    --rotate: 0deg;
+}
+
+#eleven {
+    --rotate: 330deg;
+}
+
+.wrapper::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    height: 15px;
+    width: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.wrapper .hand {
+    --rotate: 0;
+    bottom: 50%;
+    left: 50%;
+    z-index: 10px;
+    position: absolute;
+    transform: rotate(calc(var(--rotate)* 1deg));
+    transform: translateX(-50%);
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+}
+
+.wrapper .hand.sec {
+    height: 45%;
+    width: 3px;
+    background-color: red;
+}
+
+.wrapper .hand.min {
+    height: 40%;
+    width: 7px;
+    background-color: black;
+}
+
+.wrapper .hand.hour {
+    height: 35%;
+    width: 10px;
+    background-color: black;
+}
